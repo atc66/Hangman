@@ -1,6 +1,6 @@
 var blankAnswer = document.getElementById('blankAnswer');
 var submit = document.getElementById('try');
-
+var letterGuessed = document.getElementById('letterGuessed');
 
 
 // Our Possible Answers
@@ -21,7 +21,7 @@ console.log(answer)
 // Display the blank spaces on the screen, .join removes the commas
 blankAnswer.innerHTML = answer.join(' ');
 
-
+var letterGuess = [];
 
 var availableLetters = "qwertyuiopasdfghjklzxcvbnm";
 	// console.log(availableLetters[1]);
@@ -40,25 +40,13 @@ submit.addEventListener('click', function(){
 		} else if (guess !== word[i]){
 			console.log("There are no " + guess + "'s guess again")
 		} else {
-			alert("There is a " + guess);
+			alert("There is a " + guess);	
 		}
+		letterGuess.push(guess);
 	}
+	letterGuessed.innerHTML = letterGuess;
 })
 
-	// if (guess === word) {
-	// 	alert("I have a " + guess);
-	// } else if (guess !== word) {
-	// 	alert ("I do not have a " + guess)
-	// }
-
-	// console.log(guess.value)
-	//  		// Update the game state with the guess
-	//  	for (var j = 0; j < word.length; j++) {
-	//  		if (word[j] === guess) {
-	//  			answer[j] = guess;
-	//  		}
-	//  	}
-	// }	
 
 
 
