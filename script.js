@@ -30,22 +30,35 @@ var availableLetters = "qwertyuiopasdfghjklzxcvbnm";
 submit.addEventListener('click', function(){
 	// function for checking guess
 	// Letters to pick from
-	var availableLetters = "qwertyuiopasdfghjklzxcvbnm";
+	// var availableLetters = "qwertyuiopasdfghjklzxcvbnm";
 	// links the guess to what is typed in the box
 	var guess = document.getElementById('playerGuess').value;
-		for (i=0; i <= word.length; i++){
-		if (guess == word[i]){
-			alert("There is a " + word[i]);
-			break;
-		} else if (guess.length !== 1) {
+		for (i=0; i <= word.length; i++) {
+		if (guess.length !== 1) {
 			alert("Player can only guess one letter at a time!");
 			break;
+		} else if (guess !== word[i]){
+			console.log("There are no " + guess + "'s guess again")
 		} else {
-			alert("There are no " + guess + "'s guess again")
-			break;
+			alert("There is a " + guess);
 		}
 	}
 })
+
+	// if (guess === word) {
+	// 	alert("I have a " + guess);
+	// } else if (guess !== word) {
+	// 	alert ("I do not have a " + guess)
+	// }
+
+	// console.log(guess.value)
+	//  		// Update the game state with the guess
+	//  	for (var j = 0; j < word.length; j++) {
+	//  		if (word[j] === guess) {
+	//  			answer[j] = guess;
+	//  		}
+	//  	}
+	// }	
 
 
 
