@@ -3,6 +3,7 @@ var submit = document.getElementById('try');
 var guess = document.getElementById('playerGuess');
 var letterGuessed = document.getElementById('letterGuessed');
 var hint = document.getElementById('hint');
+var reset = document.getElementById('reset');
 // var hintIndex = indexOf(answer);
 var words = ["cat", "bird", "horse", "banana"]
 var answer = words[Math.floor(Math.random() * words.length)];
@@ -71,6 +72,10 @@ function rightGuessFunction(){
 hint.addEventListener('click', function(){
 	var hintIndex = words.indexOf(answer);
     displayHint.innerHTML = "Clue: " +  hints[hintIndex];
+})
+
+reset.addEventListener('click', function(){
+    location.reload();
 })
 
 
