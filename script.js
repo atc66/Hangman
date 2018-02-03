@@ -69,8 +69,8 @@ function rightGuessFunction(){
 
 
 hint.addEventListener('click', function(){
-	var hintIndex = indexOf(word);
-    hint.innerHTML = "Clue: - " +  hints[hintIndex];
+	var hintIndex = words.indexOf(answer);
+    displayHint.innerHTML = "Clue: " +  hints[hintIndex];
 })
 
 
