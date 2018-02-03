@@ -4,15 +4,18 @@ var guess = document.getElementById('playerGuess');
 var letterGuessed = document.getElementById('letterGuessed');
 var hint = document.getElementById('hint');
 var reset = document.getElementById('reset');
+
 // var hintIndex = indexOf(answer);
-var words = ["cat", "bird", "horse", "banana"]
+var words = ["cat", "bird", "horse", "phone", "candle", "stamp", "wonder", "hockey", "thursday", "friday", "fruit"]
 var answer = words[Math.floor(Math.random() * words.length)];
 console.log(answer);
 var finalAnswer = answer.split('')
 var letterGuess = [];
+var numberWrongGuesses = [];
+var numberRightGuesses = [];
 
 
-var hints = ['meow', 'chirp', 'nay', 'monkey food']
+var hints = ['Meow', 'Chirp', 'Nay', 'Dial me', 'In the wind', 'Sits in the corner and travels the world', " The Oneders!", "Stanley Cup", "Friday junior", "Little Saturday", "and vegetables"]
 
 // Where the answer will be displayed as blank spaces
 var blanks = [];
@@ -22,6 +25,11 @@ for (i=0; i < answer.length; i++){
 console.log(blanks)
 // Display the blank spaces on the screen, .join removes the commas
 blankAnswer.innerHTML = blanks.join(' ');
+
+
+var lives =document.getElementById('displayLives');
+var lives = 3;
+displayLives.innerHTML = "You have " + lives + " more gusses";
 
 // click submit to guess a letter after typing one in
 submit.addEventListener('click', function(){
@@ -50,24 +58,16 @@ submit.addEventListener('click', function(){
 			}
 		}
 	}	
+
+	if(numberRightGuesses.length === finalAnswer.length) {
+		displayLives.innerHTML = "You Win!";
+	}
+
+	if(numberWrongGuesses.length > lives) {
+		displayLives.innerHTML = "You Lose!";
+	}
+	console.log(lives)
 })
-
-
-var numberWrongGuesses = [];
-
-function wrongGuessFunction(){
-	if(numberWrongGuesses > 3) {
-		alert("Game Over")
-	}
-}	
-var numberRightGuesses = [];	
-function rightGuessFunction(){
-	if(numberRightGuesses.length = 3) {
-		alert("Game Over")
-	}
-}	
-
-
 
 hint.addEventListener('click', function(){
 	var hintIndex = words.indexOf(answer);
@@ -77,6 +77,8 @@ hint.addEventListener('click', function(){
 reset.addEventListener('click', function(){
     location.reload();
 })
+
+
 
 
 
