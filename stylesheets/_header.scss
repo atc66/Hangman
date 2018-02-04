@@ -1,12 +1,19 @@
-body {
-	background-color: $main-background;
-	font-family: luminari,;
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body, html {
+	background-color: blue;
+	font-family: luminari;
+	font-color: white;
+	height: 100%;
 }
 
 
 .castle {
     position: relative;
-    height: 5%;
+    min-height: 100%;
     width: 100%;
     text-align: center;
 }
@@ -22,4 +29,13 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     box-shadow: $box-shadow;
+    margin-bottom: 20px;
 }
+
+// #castlePic {
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
+// 	min-height: 100%;
+// 	min-widht: 100%;
+// }
