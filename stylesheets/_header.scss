@@ -1,0 +1,25 @@
+body {
+	background-color: $main-background;
+	font-family: luminari,;
+}
+
+
+.castle {
+    position: relative;
+    height: 5%;
+    width: 100%;
+    text-align: center;
+}
+
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: blue;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: $box-shadow;
+}

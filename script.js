@@ -44,7 +44,7 @@ submit.addEventListener('click', function(){
 			numberRightGuesses.push(guess)
 			bool = true;
 			if (numberRightGuesses.length === finalAnswer.length){
-				setTimeout(function() {alert('You Win!');});
+				setTimeout(function() {alert('DILLY DILLY!');});
 						window.location.reload()
 			}
 		}
@@ -54,7 +54,7 @@ submit.addEventListener('click', function(){
 		for (j=0; j <= finalAnswer.length; j++) {
 			if( guess != finalAnswer[i]){
 				if (numberWrongGuesses.length == 4){
-					setTimeout(function(){alert('You Lose!')})
+					setTimeout(function(){alert('OFF TO THE PIT OF MISERY!')})
 					window.location.reload();
 				} lives--;
 			  	livesLeft.innerHTML = lives + " lives left";
