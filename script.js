@@ -14,7 +14,7 @@ var numberWrongGuesses = [];
 var numberRightGuesses = [];
 
 
-var lives = 3;
+var lives = 5;
 livesLeft.innerHTML = lives + " lives left";
 
 var hints = ['Meow', 'Chirp', 'Nay', 'Dial me', 'In the wind', 'Sits in the corner and travels the world', " The Oneders!", "Stanley Cup", "Friday junior", "Little Saturday", "and vegetables", "Curious George's favorite food"]
@@ -53,7 +53,7 @@ submit.addEventListener('click', function(){
 	if(!bool){
 		for (j=0; j <= finalAnswer.length; j++) {
 			if( guess != finalAnswer[i]){
-				if (numberWrongGuesses.length == 2){
+				if (numberWrongGuesses.length == 4){
 					setTimeout(function(){alert('You Lose!')})
 					window.location.reload();
 				} lives--;
