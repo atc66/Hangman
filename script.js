@@ -5,7 +5,7 @@ var letterGuessed = document.getElementById('letterGuessed');
 var hint = document.getElementById('hint');
 var reset = document.getElementById('reset');
 var livesLeft = document.getElementById('displayLives');
-var words = ["cat", "bird", "horse", "phone", "candle", "stamp", "wonder", "hockey", "thursday", "wednesday", "fruit", "banama"]
+var words = ["cat", "bird", "horse", "phone", "candle", "stamp", "wonder", "hockey", "thursday", "wednesday", "fruit", "banana"]
 var answer = words[Math.floor(Math.random() * words.length)];
 console.log(answer);
 var finalAnswer = answer.split('')
@@ -74,12 +74,3 @@ hint.addEventListener('click', function(){
 reset.addEventListener('click', function(){
     location.reload();
 })
-
-
-
-
-
-
-
-
-
