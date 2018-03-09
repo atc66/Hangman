@@ -12,9 +12,11 @@ var finalAnswer = answer.split('')
 var letterGuess = [];
 var numberWrongGuesses = [];
 var numberRightGuesses = [];
-
-
+var newNumber = "";
+var newFinal = "";
 var lives = 5;
+
+
 livesLeft.innerHTML = lives + " lives left";
 
 var hints = ['Meow', 'Chirp', 'Nay', 'Dial me', 'In the wind', 'Sits in the corner and travels the world', " The Oneders!", "Stanley Cup", "Friday junior", "Little Saturday", "and vegetables", "Curious George's favorite food"]
@@ -36,20 +38,37 @@ submit.addEventListener('click', function(){
 	letterGuess.push(guess);
 	letterGuessed.innerHTML = "Letters Guessed: " + letterGuess;
 	var bool = false;
-	for (i=0; i <= finalAnswer.length; i++) {
-		if (guess === finalAnswer[i]){
-			console.log("this is correct")
-			blanks[i] = guess
-			blankAnswer.innerHTML = blanks.join(' ');
-			numberRightGuesses.push(guess)
-			bool = true;
-			if (numberRightGuesses.length === finalAnswer.length){
-				setTimeout(function() {alert('DILLY DILLY!');});
-						window.location.reload()
+		for (i=0; i <= finalAnswer.length; i++) {
+			if (numberRightGuesses.includes(guess) === false){
+				if (guess === finalAnswer[i]){
+					console.log("this is correct")
+					blanks[i] = guess;
+					blankAnswer.innerHTML = blanks.join(' ');
+					numberRightGuesses.push(guess)	
+					var newNumber = numberRightGuesses.slice().sort()
+					var newFinal = finalAnswer.slice().sort()
+					console.log(newNumber)
+					console.log(finalAnswer)
+					bool = true;
+				}
+			} else {
+				console.log('you guess that letter')
 			}
 		}
-	}
 
+
+
+	console.log(finalAnswer.toString())
+	x = numberRightGuesses.toString()
+	y = finalAnswer.toString()
+
+	if (x === y ){
+		setTimeout(function(){
+			alert('DILLY DILLY!');
+		});
+		window.location.reload()
+	}	
+	
 	if(!bool){
 		for (j=0; j <= finalAnswer.length; j++) {
 			if( guess != finalAnswer[i]){
@@ -63,7 +82,7 @@ submit.addEventListener('click', function(){
 			  	return	
 			}	
 		}
-	}	
+	}
 })
 
 hint.addEventListener('click', function(){
